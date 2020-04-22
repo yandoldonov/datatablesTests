@@ -1,0 +1,54 @@
+﻿@model datatablesTests.Models.dataCollectionModel
+
+@{
+    ViewBag.Title = "multiColumnSearch";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" id="dataSet-data-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">guid</th>
+                        <th scope="col">decimal</th>
+                        <th scope="col">date</th>
+                        <th scope="col">bolean</th>
+                        <th scope="col">enum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.dataItems)
+                    {
+                        <tr>
+                            <th scope="row">@item.id</th>
+                            <td>@item.guid</td>
+                            <td>@item.decimalData</td>
+                            <td>@item.dateTimeData.Value.ToShortDateString()</td>
+                            <td>@item.boleanData</td>
+                            <td>@item.enumData</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#dataSet-data-table').DataTable(
+            {
+                "stateSave": true,
+                "order": [[0, "desc"]]
+            }
+        );
+    });
+
+</script>
