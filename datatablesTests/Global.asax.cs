@@ -1,4 +1,6 @@
-﻿using System;
+﻿using datatablesTests.modelBinders;
+using datatablesTests.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,8 @@ namespace datatablesTests
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ModelBinders.Binders.Add(typeof(dataCollectionModel), new selfBuindableViewModelBinder<dataCollectionModel>());
         }
     }
 }

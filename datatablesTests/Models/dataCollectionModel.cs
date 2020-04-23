@@ -1,11 +1,13 @@
-﻿using System;
+﻿using datatablesTests.interfaces;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 
 namespace datatablesTests.Models
 {
-    public class dataCollectionModel
+    public class dataCollectionModel : ISelfBindableModel
     {
         public dataCollectionModel()
         {
@@ -30,13 +32,25 @@ namespace datatablesTests.Models
                     dateTimeData = randomDay(rnd)
                 });
             }
-        }
+        }      
 
         DateTime randomDay(Random rnd)
         {
             DateTime start = new DateTime(1995, 1, 1);
             int range = (DateTime.Today - start).Days;
             return start.AddDays(rnd.Next(range));
+        }
+
+        public void rebuildFromForm(NameValueCollection form)
+        {
+            List<Tuple<string, string>> keyValuePairs = new List<Tuple<string, string>>();
+
+            foreach (var key in form.AllKeys)
+            {
+                keyValuePairs.Add(new Tuple<string, string>(key, form.GetValues(key)[0]));
+            }
+
+            string s = string.Empty;
         }
     }
 }

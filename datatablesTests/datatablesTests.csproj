@@ -468,6 +468,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ISelfBindableModel.cs" />
+    <Compile Include="modelBinders\selfBuindableViewModelBinder.cs" />
     <Compile Include="Models\dataCollectionModel.cs" />
     <Compile Include="Models\dataModel.cs" />
     <Compile Include="Models\enumData.cs" />
@@ -479,6 +481,8 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.0.min.map" />
+    <Content Include="Views\home\multiPageSubmitForm.cshtml" />
+    <Content Include="Views\home\_multiPageSubmitFormPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -488,6 +492,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="attributes\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

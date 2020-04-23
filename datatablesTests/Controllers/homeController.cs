@@ -21,5 +21,19 @@ namespace datatablesTests.Controllers
             _dataModel.generateData();
             return View(_dataModel);
         }
+
+        public ActionResult multiPageSubmitForm()
+        {
+            dataCollectionModel _dataModel = new dataCollectionModel();
+            _dataModel.generateData();
+            return View(_dataModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult multiPageSubmitForm(dataCollectionModel model)
+        {      
+            return PartialView($"~/Views/home/_multiPageSubmitFormPartial.cshtml", model);
+        }
     }
 }

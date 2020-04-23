@@ -1,0 +1,12 @@
+﻿@model datatablesTests.Models.dataCollectionModel
+
+@{
+                /**/
+
+                ViewBag.Title = "multiPageSubmitForm";
+                Layout = "~/Views/shared/_layout.cshtml";
+}
+
+<div id="pagePartialSection">
+    @Html.Partial($"~/Views/home/_multiPageSubmitFormPartial.cshtml", Model)
+</div>

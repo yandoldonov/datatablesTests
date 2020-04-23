@@ -13,5 +13,6 @@ namespace datatablesTests.Models
         public DateTime? dateTimeData { get; set; }
         public bool boleanData { get; set; }
         public enumData enumData { get; set; }
+        public bool select { get; set; }
     }
 }

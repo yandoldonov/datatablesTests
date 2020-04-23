@@ -11,14 +11,15 @@
     <title>Data Tables Tests</title>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
     <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
     <script src="~/Scripts/jquery-3.5.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
     <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
     <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
 </head>
@@ -32,9 +33,12 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     @Html.ActionLink("Home", "index", "home", null, new { @class = "nav-link" })
-                </li>             
+                </li>
                 <li class="nav-item">
                     @Html.ActionLink("Multi-Column Search", "multiColumnSearch", "home", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Multi-Page Submit Form", "multiPageSubmitForm", "home", null, new { @class = "nav-link" })
                 </li>
             </ul>
             <span class="navbar-text">
